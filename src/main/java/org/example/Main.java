@@ -11,14 +11,16 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
         SellerDao sellerDao = DaoFactory.createSellerDao();
         System.out.println("=== Teste 1: Seller findById ====");
-       Seller seller = sellerDao.findById(3);
+        Seller seller = sellerDao.findById(3);
         System.out.println(seller);
         System.out.println("\n=== Teste 2: FindByDepartment ====");
         Department department = new Department(2, null);
@@ -45,6 +47,14 @@ public class Main {
         sellerDao.update(seller);
         System.out.println("Update Completed" );
         System.out.println(seller);
+
+        System.out.println("\n=== Teste 5: Seller Delete ====");
+        System.out.println("Enter id for delete test: ");
+        int id = sc.nextInt();
+        sellerDao.deletByID(id);
+        System.out.println("Delete Completed");
+        sc.close();
+
 
 
 
