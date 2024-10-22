@@ -28,6 +28,12 @@ public class Main {
             System.out.println(ojb);
         }
 
+        System.out.println("\n=== Teste 3: Seller FindAll ====");
+
+        list = sellerDao.findAll();
+        for (Seller ojb : list){
+            System.out.println(ojb);
+        }
 
     }
 }
