@@ -34,6 +34,10 @@ public class Main {
         for (Seller ojb : list){
             System.out.println(ojb);
         }
+        System.out.println("\n=== Teste 3: Seller Insert ====");
+        Seller newSeller = new Seller(null, "Wdenberg", "wdenberg@gmail.com", new Date(), 7000.00, department);
+        sellerDao.insert(newSeller);
+        System.out.printf("Inserted new ID = "+newSeller);
 
     }
 }
