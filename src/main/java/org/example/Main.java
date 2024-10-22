@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
 
@@ -34,10 +33,20 @@ public class Main {
         for (Seller ojb : list){
             System.out.println(ojb);
         }
-        System.out.println("\n=== Teste 3: Seller Insert ====");
+        /*System.out.println("\n=== Teste 4: Seller Insert ====");
         Seller newSeller = new Seller(null, "Wdenberg", "wdenberg@gmail.com", new Date(), 7000.00, department);
         sellerDao.insert(newSeller);
-        System.out.printf("Inserted new ID = "+newSeller);
+        System.out.printf("Inserted new ID = ");
+        System.out.println(newSeller);*/
+
+        System.out.println("\n=== Teste 5: Seller UPDATE ====");
+        seller = sellerDao.findById(1);
+        seller.setName("João Lima");
+        sellerDao.update(seller);
+        System.out.println("Update Completed" );
+        System.out.println(seller);
+
+
 
     }
 }
